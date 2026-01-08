@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Mohamed Fayed - AI & Backend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        .animate-blink {
+            animation: blink 1s infinite;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Gradient Animation */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Glow Animation */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(59, 130, 246, 0.5); }
+        }
+        
+        .animate-glow {
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        /* Slide in from left */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Slide in from right */
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        /* Scale in */
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .scale-in {
+            animation: scaleIn 0.6s ease-out forwards;
+        }
+        
+        /* Stagger animation delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Particle effect */
+        @keyframes particleFloat {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
+                AMF
+            </div>
+            <div class="flex gap-8">
+                <a href="#home" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-cyan-400 hover:scale-110">home</a>
+                <a href="#about" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">about</a>
+                <a href="#skills" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">skills</a>
+                <a href="#projects" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">projects</a>
+                <a href="#contact" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-purple-950">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse animate-float"></div>
+            <div class="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-1/2 left-1/2 animate-pulse animate-float" style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="text-center z-10 px-6">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-gradient">
+                Ahmed Mohamed Fayed
+            </h1>
+            <p class="text-2xl md:text-3xl text-gray-300 mb-8 h-10 slide-in-left delay-200">
+                <span id="typed-text"></span><span class="animate-blink text-cyan-400">|</span>
+            </p>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 slide-in-right delay-300">
+                Building intelligent systems and scalable backend solutions with cutting-edge technologies
+            </p>
+            <a href="#projects" class="inline-block bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:scale-110 scale-in delay-400 animate-glow">
+                View My Work
+            </a>
+            <div class="mt-16 animate-bounce delay-500">
+                <svg class="mx-auto text-cyan-400 w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 slide-in-left" id="about-title">
+                About Me
+            </h2>
+            <div class="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-2xl p-8 border border-cyan-500/30 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-105 opacity-0 scale-in" id="about-content">
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    I'm a passionate AI and backend developer focused on creating intelligent, scalable systems that solve real-world problems. With expertise in machine learning, deep learning, and modern backend frameworks, I transform complex challenges into elegant solutions. My work combines the power of artificial intelligence with robust backend architecture to build systems that are not just functional, but truly innovative.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl top-20 right-20 animate-pulse"></div>
+            <div class="absolute w-72 h-72 bg-purple-500/10 rounded-full blur-3xl bottom-20 left-20 animate-pulse" style="animation-delay: 1.5s;"></div>
+        </div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="skills-title">
+                Skills & Technologies
+            </h2>
+
+            <!-- AI/ML Skills -->
+            <div class="mb-12 opacity-0" id="ai-section">
+                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
+                    <svg class="mr-3 text-purple-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                    <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">AI & Machine Learning</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4" id="ai-skills"></div>
+            </div>
+
+            <!-- Data Science Skills -->
+            <div class="mb-12 opacity-0" id="data-section">
+                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
+                    <svg class="mr-3 text-cyan-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                    </svg>
+                    <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Data Science & Analysis</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4" id="data-skills"></div>
+            </div>
+
+            <!-- Backend & Database Skills -->
+            <div class="mb-12 opacity-0" id="backend-section">
+                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
+                    <svg class="mr-3 text-green-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <span class="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Backend Development</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4" id="backend-skills"></div>
+            </div>
+
+            <!-- DevOps Skills -->
+            <div class="opacity-0" id="devops-section">
+                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
+                    <svg class="mr-3 text-blue-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">DevOps & Tools</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4" id="devops-skills"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="projects-title">
+                Featured Projects
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8" id="projects-container"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl top-0 left-1/4 animate-pulse"></div>
+            <div class="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl bottom-0 right-1/4 animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="contact-title">
+                Let's Connect
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 opacity-0 slide-in-left delay-200" id="contact-subtitle">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
+            <div class="flex justify-center gap-6 flex-wrap" id="contact-buttons">
+                <a href="mailto:fayeda660@gmail.com" class="flex items-center gap-3 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:scale-110 animate-glow opacity-0 scale-in delay-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/ahmed-fayed-04a5112b7" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gray-800/80 border-2 border-cyan-500/50 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 hover:border-cyan-400 transition-all transform hover:scale-110 opacity-0 scale-in delay-400">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/Fayedolla" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gray-800/80 border-2 border-purple-500/50 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 hover:border-purple-400 transition-all transform hover:scale-110 opacity-0 scale-in delay-500">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-cyan-500/20 bg-gray-950">
+        <div class="max-w-6xl mx-auto text-center text-gray-400">
+            <p class="hover:text-cyan-400 transition-colors duration-300">© 2026 Ahmed Mohamed Fayed. Built with passion and code.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typing effect
+        const fullText = "AI & Backend Developer";
+        let index = 0;
+        const typedTextElement = document.getElementById('typed-text');
+        
+        function type() {
+            if (index <= fullText.length) {
+                typedTextElement.textContent = fullText.slice(0, index);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+        type();
+
+        // Scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-950/95', 'backdrop-blur-lg', 'shadow-lg', 'shadow-cyan-500/10');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-gray-950/95', 'backdrop-blur-lg', 'shadow-lg', 'shadow-cyan-500/10');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // Active navigation link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('text-cyan-400'));
+                navLinks.forEach(l => l.classList.add('text-gray-300'));
+                link.classList.add('text-cyan-400');
+                link.classList.remove('text-gray-300');
+            });
+        });
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.classList.add('slide-in-left');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sections
+        const sections = ['about-title', 'about-content', 'skills-title', 'ai-section', 
+                         'data-section', 'backend-section', 'devops-section', 
+                         'projects-title', 'contact-title', 'contact-subtitle'];
+        
+        sections.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) observer.observe(element);
+        });
+
+        // Skills data
+        const skillLogos = {
+            'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+            'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+            'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+            'PyTorch': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+            'Pandas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
+            'NumPy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg',
+            'FastAPI': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg',
+            'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+            'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+            'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+            'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+            'Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
+        };
+
+        const skills = [
+            { name: 'Machine Learning', category: 'AI/ML' },
+            { name: 'Deep Learning', category: 'AI/ML' },
+            { name: 'NLP', category: 'AI/ML' },
+            { name: 'Computer Vision', category: 'AI/ML' },
+            { name: 'TensorFlow', logo: skillLogos['TensorFlow'], category: 'AI/ML' },
+            { name: 'PyTorch', logo: skillLogos['PyTorch'], category: 'AI/ML' },
+            { name: 'Keras', category: 'AI/ML' },
+            { name: 'Scikit-learn', category: 'AI/ML' },
+            { name: 'Data Analysis', category: 'Data Science' },
+            { name: 'Pandas', logo: skillLogos['Pandas'], category: 'Data Science' },
+            { name: 'NumPy', logo: skillLogos['NumPy'], category: 'Data Science' },
+            { name: 'Data Visualization', category: 'Data Science' },
+            { name: 'Matplotlib', category: 'Data Science' },
+            { name: 'Seaborn', category: 'Data Science' },
+            { name: 'Python', logo: skillLogos['Python'], category: 'Programming' },
+            { name: 'SQL', logo: skillLogos['SQL'], category: 'Database' },
+            { name: 'JavaScript', logo: skillLogos['JavaScript'], category: 'Programming' },
+            { name: 'FastAPI', logo: skillLogos['FastAPI'], category: 'Backend' },
+            { name: 'PostgreSQL', logo: skillLogos['PostgreSQL'], category: 'Database' },
+            { name: 'REST APIs', category: 'Backend' },
+            { name: 'SQLAlchemy', category: 'Backend' },
+            { name: 'React', logo: skillLogos['React'], category: 'Backend' },
+            { name: 'Docker', logo: skillLogos['Docker'], category: 'DevOps' },
+            { name: 'Git', logo: skillLogos['Git'], category: 'DevOps' },
+            { name: 'Linux', logo: skillLogos['Linux'], category: 'DevOps' },
+        ];
+
+        // Render skills
+        function renderSkills(category, containerId) {
+            const container = document.getElementById(containerId);
+            const filteredSkills = skills.filter(s => {
+                if (category === 'Backend') {
+                    return s.category === 'Backend' || s.category === 'Database' || s.category === 'Programming';
+                }
+                return s.category === category;
+            });
+            
+            filteredSkills.forEach((skill, idx) => {
+                const skillCard = document.createElement('div');
+                skillCard.className = 'group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 p-4 rounded-xl border border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-cyan-500/30 cursor-pointer backdrop-blur-sm opacity-0 scale-in';
+                skillCard.style.animationDelay = `${idx * 0.05}s`;
+                
+                setTimeout(() => {
+                    skillCard.classList.remove('opacity-0');
+                }, idx * 50);
+                
+                if (skill.logo) {
+                    skillCard.innerHTML = `
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-600/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <img src="${skill.logo}" alt="${skill.name}" class="w-10 h-10 mb-2 mx-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-sm font-semibold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">${skill.name}</h3>
+                    `;
+                } else {
+                    skillCard.innerHTML = `
+                        <div class="w-10 h-10 mb-2 mx-auto flex items-center justify-center text-2xl group-hover:scale-125 transition-transform duration-300">🧠</div>
+                        <h3 class="text-sm font-semibold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">${skill.name}</h3>
+                    `;
+                }
+                
+                container.appendChild(skillCard);
+            });
+        }
+
+        renderSkills('AI/ML', 'ai-skills');
+        renderSkills('Data Science', 'data-skills');
+        renderSkills('Backend', 'backend-skills');
+        renderSkills('DevOps', 'devops-skills');
+
+        // Projects data
+        const projects = [
+            {
+                title: 'Power Consumption Prediction System',
+                description: 'AI-powered electricity consumption prediction and recommendation system using deep learning. Achieves 99.6% R² score with neural network architecture, providing real-time monitoring, cost analysis, and personalized energy-saving recommendations.',
+                tech: ['Python', 'TensorFlow', 'Keras', 'Streamlit', 'NumPy', 'Pandas', 'Plotly'],
+                gradient: 'from-yellow-500 to-orange-500',
+                features: ['99.6% prediction accuracy', 'Smart energy recommendations', 'Cost & CO₂ analysis'],
+                github: 'https://github.com/Fayedolla/Power-Consumption-'
+            },
+            {
+                title: 'Toxic Comment Classification System',
+                description: 'Deep learning-powered web application that detects and classifies toxic comments into six categories using a Bidirectional LSTM neural network. Features real-time prediction with multi-label classification and probability scores.',
+                tech: ['Python', 'TensorFlow', 'Keras', 'FastAPI', 'React', 'LSTM', 'NLP'],
+                gradient: 'from-red-500 to-orange-500',
+                features: ['Multi-label text classification', 'Bidirectional LSTM architecture', 'Real-time toxicity detection'],
+                github: 'https://github.com/Fayedolla/'
+            },
+            {
+                title: 'Neural Network Classifier - Perceptron & Adaline',
+                description: 'Full-stack web application implementing Perceptron and Adaline learning algorithms for binary classification of bird species. Features real-time visualization, interactive decision boundaries, and comprehensive model evaluation with confusion matrix.',
+                tech: ['Python', 'FastAPI', 'React', 'NumPy', 'Pandas', 'SQLAlchemy'],
+                gradient: 'from-purple-500 to-pink-500',
+                features: ['Interactive UI with hyperparameter tuning', 'Real-time training visualization', 'Decision boundary plotting'],
+                github: 'https://github.com/Fayedolla/'
+            },
+            {
+                title: 'FastAPI Social Media App',
+                description: 'Production-ready REST API with complete authentication, post management, voting system, and user profiles. Built with FastAPI and PostgreSQL, featuring JWT authentication, database migrations, and comprehensive API documentation.',
+                tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'OAuth2', 'JWT'],
+                gradient: 'from-blue-500 to-cyan-500',
+                features: ['JWT Authentication & Authorization', 'CRUD operations for posts', 'Voting system (upvote/downvote)'],
+                github: 'https://github.com/Fayedolla/'
+            }
+        ];
+
+        // Render projects
+        const projectsContainer = document.getElementById('projects-container');
+        projects.forEach((project, idx) => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'group bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl p-8 border-2 border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/30 cursor-pointer backdrop-blur-sm opacity-0 scale-in';
+            projectCard.style.animationDelay = `${idx * 0.2}s`;
+            
+            setTimeout(() => {
+                projectCard.classList.remove('opacity-0');
+            }, idx * 200);
+            
+            const techTags = project.tech.map(tech => `<span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full text-sm text-gray-300 border border-cyan-500/30 hover:border-cyan-400 hover:scale-105 transition-all duration-300">${tech}</span>`).join('');
+            const features = project.features.map(f => `<li class="flex items-start"><span class="text-cyan-400 mr-2">▸</span><span>${f}</span></li>`).join('');
+            
+            projectCard.innerHTML = `
+                <div class="w-full h-2 bg-gradient-to-r ${project.gradient} rounded-full mb-6 group-hover:h-3 transition-all duration-300"></div>
+                <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
+                    ${project.title}
+                </h3>
+                <p class="text-gray-400 mb-4 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">${project.description}</p>
+                <ul class="text-sm text-gray-500 mb-6 space-y-1 group-hover:text-gray-400 transition-colors duration-300">${features}</ul>
+                <div class="flex flex-wrap gap-2 mb-6">${techTags}</div>
+                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group-hover:scale-105">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                    </svg>
+                    <span class="text-sm font-semibold">View on GitHub</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            `;
+            
+            projectsContainer.appendChild(projectCard);
+        });
+    </script>
+</body>
+</html>

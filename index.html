@@ -113,13 +113,24 @@
     </style>
 </head>
 <body class="bg-gray-950 text-white overflow-x-hidden">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="fixed top-4 right-4 z-50 lg:hidden bg-gray-800/90 backdrop-blur-lg p-3 rounded-lg border border-cyan-500/30 hover:border-cyan-400 transition-all">
+        <svg id="menu-icon" class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 text-cyan-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <div class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
                 AMF
             </div>
-            <div class="flex gap-8">
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex gap-6 xl:gap-8">
                 <a href="#home" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-cyan-400 hover:scale-110">home</a>
                 <a href="#about" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">about</a>
                 <a href="#skills" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">skills</a>
@@ -127,31 +138,42 @@
                 <a href="#contact" class="nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 hover:scale-110">contact</a>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-gray-950/98 backdrop-blur-lg border-b border-cyan-500/20 shadow-xl">
+            <div class="flex flex-col py-4 px-6 space-y-4">
+                <a href="#home" class="nav-link mobile-nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-cyan-400 py-2 px-4 rounded-lg hover:bg-cyan-500/10">home</a>
+                <a href="#about" class="nav-link mobile-nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 py-2 px-4 rounded-lg hover:bg-cyan-500/10">about</a>
+                <a href="#skills" class="nav-link mobile-nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 py-2 px-4 rounded-lg hover:bg-cyan-500/10">skills</a>
+                <a href="#projects" class="nav-link mobile-nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 py-2 px-4 rounded-lg hover:bg-cyan-500/10">projects</a>
+                <a href="#contact" class="nav-link mobile-nav-link capitalize transition-all duration-300 hover:text-cyan-400 text-gray-300 py-2 px-4 rounded-lg hover:bg-cyan-500/10">contact</a>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-purple-950">
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-purple-950 px-4">
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse animate-float"></div>
-            <div class="absolute w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse animate-float" style="animation-delay: 2s;"></div>
-            <div class="absolute w-72 h-72 bg-blue-500/20 rounded-full blur-3xl top-1/2 left-1/2 animate-pulse animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/20 rounded-full blur-3xl -top-32 sm:-top-48 -left-32 sm:-left-48 animate-pulse animate-float"></div>
+            <div class="absolute w-64 sm:w-96 h-64 sm:h-96 bg-purple-500/20 rounded-full blur-3xl -bottom-32 sm:-bottom-48 -right-32 sm:-right-48 animate-pulse animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/20 rounded-full blur-3xl top-1/2 left-1/2 animate-pulse animate-float" style="animation-delay: 1s;"></div>
         </div>
 
-        <div class="text-center z-10 px-6">
-            <h1 class="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-gradient">
+        <div class="text-center z-10 px-4 sm:px-6 max-w-5xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-fade-in animate-gradient leading-tight">
                 Ahmed Mohamed Fayed
             </h1>
-            <p class="text-2xl md:text-3xl text-gray-300 mb-8 h-10 slide-in-left delay-200">
+            <p class="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 sm:mb-8 h-10 slide-in-left delay-200">
                 <span id="typed-text"></span><span class="animate-blink text-cyan-400">|</span>
             </p>
-            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 slide-in-right delay-300">
+            <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-12 slide-in-right delay-300 px-4">
                 Building intelligent systems and scalable backend solutions with cutting-edge technologies
             </p>
-            <a href="#projects" class="inline-block bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:scale-110 scale-in delay-400 animate-glow">
+            <a href="#projects" class="inline-block bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:scale-110 scale-in delay-400 animate-glow">
                 View My Work
             </a>
-            <div class="mt-16 animate-bounce delay-500">
-                <svg class="mx-auto text-cyan-400 w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="mt-12 sm:mt-16 animate-bounce delay-500">
+                <svg class="mx-auto text-cyan-400 w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             </div>
@@ -159,132 +181,166 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative">
+    <section id="about" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative">
         <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5"></div>
         <div class="max-w-4xl mx-auto relative z-10">
-            <h2 class="text-5xl font-bold mb-8 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 slide-in-left" id="about-title">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 slide-in-left" id="about-title">
                 About Me
             </h2>
-            <div class="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-2xl p-8 border border-cyan-500/30 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-105 opacity-0 scale-in" id="about-content">
-                <p class="text-xl text-gray-300 leading-relaxed">
-                    I'm a passionate AI and backend developer focused on creating intelligent, scalable systems that solve real-world problems. With expertise in machine learning, deep learning, and modern backend frameworks, I transform complex challenges into elegant solutions. My work combines the power of artificial intelligence with robust backend architecture to build systems that are not just functional, but truly innovative.
-                </p>
+            <div class="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-2xl p-6 sm:p-8 border border-cyan-500/30 shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:scale-105 opacity-0 scale-in" id="about-content">
+                <div class="flex flex-col md:flex-row gap-6 sm:gap-8 items-center">
+                    <!-- Profile Photo -->
+                    <div class="flex-shrink-0">
+                        <div class="relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+                            <img src="476848694_1153630816372913_6791596280622840298_n.jpg" alt="Ahmed Mohamed Fayed" class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-gray-900 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <!-- About Text -->
+                    <div class="flex-1">
+                        <p class="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+                            I'm a passionate AI and backend developer focused on creating intelligent, scalable systems that solve real-world problems. With expertise in machine learning, deep learning, and modern backend frameworks, I transform complex challenges into elegant solutions. My work combines the power of artificial intelligence with robust backend architecture to build systems that are not just functional, but truly innovative.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+    <section id="skills" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
         <div class="absolute inset-0">
-            <div class="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl top-20 right-20 animate-pulse"></div>
-            <div class="absolute w-72 h-72 bg-purple-500/10 rounded-full blur-3xl bottom-20 left-20 animate-pulse" style="animation-delay: 1.5s;"></div>
+            <div class="absolute w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl top-20 right-20 animate-pulse"></div>
+            <div class="absolute w-48 sm:w-72 h-48 sm:h-72 bg-purple-500/10 rounded-full blur-3xl bottom-20 left-20 animate-pulse" style="animation-delay: 1.5s;"></div>
         </div>
         <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="skills-title">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12 md:mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="skills-title">
                 Skills & Technologies
             </h2>
 
             <!-- AI/ML Skills -->
-            <div class="mb-12 opacity-0" id="ai-section">
-                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
-                    <svg class="mr-3 text-purple-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="mb-8 sm:mb-10 md:mb-12 opacity-0" id="ai-section">
+                <h3 class="text-xl sm:text-2xl font-semibold text-gray-300 mb-4 sm:mb-6 flex items-center flex-wrap">
+                    <svg class="mr-2 sm:mr-3 text-purple-400 w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                     </svg>
                     <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">AI & Machine Learning</span>
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4" id="ai-skills"></div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 sm:gap-4" id="ai-skills"></div>
             </div>
 
             <!-- Data Science Skills -->
-            <div class="mb-12 opacity-0" id="data-section">
-                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
-                    <svg class="mr-3 text-cyan-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="mb-8 sm:mb-10 md:mb-12 opacity-0" id="data-section">
+                <h3 class="text-xl sm:text-2xl font-semibold text-gray-300 mb-4 sm:mb-6 flex items-center flex-wrap">
+                    <svg class="mr-2 sm:mr-3 text-cyan-400 w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
                     </svg>
                     <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Data Science & Analysis</span>
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4" id="data-skills"></div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 sm:gap-4" id="data-skills"></div>
             </div>
 
             <!-- Backend & Database Skills -->
-            <div class="mb-12 opacity-0" id="backend-section">
-                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
-                    <svg class="mr-3 text-green-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="mb-8 sm:mb-10 md:mb-12 opacity-0" id="backend-section">
+                <h3 class="text-xl sm:text-2xl font-semibold text-gray-300 mb-4 sm:mb-6 flex items-center flex-wrap">
+                    <svg class="mr-2 sm:mr-3 text-green-400 w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                     </svg>
                     <span class="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">Backend Development</span>
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4" id="backend-skills"></div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-3 sm:gap-4" id="backend-skills"></div>
             </div>
 
             <!-- DevOps Skills -->
             <div class="opacity-0" id="devops-section">
-                <h3 class="text-2xl font-semibold text-gray-300 mb-6 flex items-center">
-                    <svg class="mr-3 text-blue-400 w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <h3 class="text-xl sm:text-2xl font-semibold text-gray-300 mb-4 sm:mb-6 flex items-center flex-wrap">
+                    <svg class="mr-2 sm:mr-3 text-blue-400 w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
                     <span class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">DevOps & Tools</span>
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4" id="devops-skills"></div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4" id="devops-skills"></div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative">
+    <section id="projects" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-950 to-gray-900 relative">
         <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5"></div>
         <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="projects-title">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 sm:mb-12 md:mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="projects-title">
                 Featured Projects
             </h2>
-            <div class="grid md:grid-cols-2 gap-8" id="projects-container"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8" id="projects-container"></div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+    <section id="contact" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
         <div class="absolute inset-0">
-            <div class="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl top-0 left-1/4 animate-pulse"></div>
-            <div class="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl bottom-0 right-1/4 animate-pulse" style="animation-delay: 1s;"></div>
+            <div class="absolute w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl top-0 left-1/4 animate-pulse"></div>
+            <div class="absolute w-64 sm:w-96 h-64 sm:h-96 bg-purple-500/10 rounded-full blur-3xl bottom-0 right-1/4 animate-pulse" style="animation-delay: 1s;"></div>
         </div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="contact-title">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-gradient opacity-0 scale-in" id="contact-title">
                 Let's Connect
             </h2>
-            <p class="text-xl text-gray-300 mb-12 opacity-0 slide-in-left delay-200" id="contact-subtitle">
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-8 sm:mb-12 opacity-0 slide-in-left delay-200 px-4" id="contact-subtitle">
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
-            <div class="flex justify-center gap-6 flex-wrap" id="contact-buttons">
-                <a href="mailto:fayeda660@gmail.com" class="flex items-center gap-3 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:scale-110 animate-glow opacity-0 scale-in delay-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4" id="contact-buttons">
+                <a href="mailto:fayeda660@gmail.com" class="flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:scale-110 animate-glow opacity-0 scale-in delay-300">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    Email Me
+                    <span class="whitespace-nowrap">Email Me</span>
                 </a>
-                <a href="https://www.linkedin.com/in/ahmed-fayed-04a5112b7" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gray-800/80 border-2 border-cyan-500/50 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 hover:border-cyan-400 transition-all transform hover:scale-110 opacity-0 scale-in delay-400">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://www.linkedin.com/in/ahmed-fayed-04a5112b7" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-gray-800/80 border-2 border-cyan-500/50 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 hover:border-cyan-400 transition-all transform hover:scale-110 opacity-0 scale-in delay-400">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                     </svg>
-                    LinkedIn
+                    <span class="whitespace-nowrap">LinkedIn</span>
                 </a>
-                <a href="https://github.com/Fayedolla" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-gray-800/80 border-2 border-purple-500/50 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-700 hover:border-purple-400 transition-all transform hover:scale-110 opacity-0 scale-in delay-500">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <a href="https://github.com/Fayedolla" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-gray-800/80 border-2 border-purple-500/50 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 hover:border-purple-400 transition-all transform hover:scale-110 opacity-0 scale-in delay-500">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
                     </svg>
-                    GitHub
+                    <span class="whitespace-nowrap">GitHub</span>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-cyan-500/20 bg-gray-950">
+    <footer class="py-6 sm:py-8 px-4 sm:px-6 border-t border-cyan-500/20 bg-gray-950">
         <div class="max-w-6xl mx-auto text-center text-gray-400">
-            <p class="hover:text-cyan-400 transition-colors duration-300">© 2026 Ahmed Mohamed Fayed. Built with passion and code.</p>
+            <p class="hover:text-cyan-400 transition-colors duration-300 text-sm sm:text-base">© 2026 Ahmed Mohamed Fayed. Built with passion and code.</p>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+        
         // Typing effect
         const fullText = "AI & Backend Developer";
         let index = 0;
@@ -404,7 +460,7 @@
             
             filteredSkills.forEach((skill, idx) => {
                 const skillCard = document.createElement('div');
-                skillCard.className = 'group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 p-4 rounded-xl border border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-cyan-500/30 cursor-pointer backdrop-blur-sm opacity-0 scale-in';
+                skillCard.className = 'group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 p-3 sm:p-4 rounded-xl border border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-cyan-500/30 cursor-pointer backdrop-blur-sm opacity-0 scale-in';
                 skillCard.style.animationDelay = `${idx * 0.05}s`;
                 
                 setTimeout(() => {
@@ -415,14 +471,14 @@
                     skillCard.innerHTML = `
                         <div class="relative">
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-purple-600/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <img src="${skill.logo}" alt="${skill.name}" class="w-10 h-10 mb-2 mx-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-300">
+                            <img src="${skill.logo}" alt="${skill.name}" class="w-8 h-8 sm:w-10 sm:h-10 mb-2 mx-auto object-contain relative z-10 group-hover:scale-110 transition-transform duration-300">
                         </div>
-                        <h3 class="text-sm font-semibold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">${skill.name}</h3>
+                        <h3 class="text-xs sm:text-sm font-semibold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">${skill.name}</h3>
                     `;
                 } else {
                     skillCard.innerHTML = `
-                        <div class="w-10 h-10 mb-2 mx-auto flex items-center justify-center text-2xl group-hover:scale-125 transition-transform duration-300">🧠</div>
-                        <h3 class="text-sm font-semibold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">${skill.name}</h3>
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 mb-2 mx-auto flex items-center justify-center text-xl sm:text-2xl group-hover:scale-125 transition-transform duration-300">🧠</div>
+                        <h3 class="text-xs sm:text-sm font-semibold text-white text-center group-hover:text-cyan-400 transition-colors duration-300">${skill.name}</h3>
                     `;
                 }
                 
@@ -443,7 +499,8 @@
                 tech: ['Python', 'TensorFlow', 'Keras', 'Streamlit', 'NumPy', 'Pandas', 'Plotly'],
                 gradient: 'from-yellow-500 to-orange-500',
                 features: ['99.6% prediction accuracy', 'Smart energy recommendations', 'Cost & CO₂ analysis'],
-                github: 'https://github.com/Fayedolla/Power-Consumption-'
+                github: 'https://github.com/Fayedolla/Power-Consumption-',
+                image: 'Power.png'
             },
             {
                 title: 'Toxic Comment Classification System',
@@ -451,7 +508,8 @@
                 tech: ['Python', 'TensorFlow', 'Keras', 'FastAPI', 'React', 'LSTM', 'NLP'],
                 gradient: 'from-red-500 to-orange-500',
                 features: ['Multi-label text classification', 'Bidirectional LSTM architecture', 'Real-time toxicity detection'],
-                github: 'https://github.com/Fayedolla/'
+                github: 'https://github.com/Fayedolla/',
+                image: 'Toxic.png'
             },
             {
                 title: 'Neural Network Classifier - Perceptron & Adaline',
@@ -459,7 +517,8 @@
                 tech: ['Python', 'FastAPI', 'React', 'NumPy', 'Pandas', 'SQLAlchemy'],
                 gradient: 'from-purple-500 to-pink-500',
                 features: ['Interactive UI with hyperparameter tuning', 'Real-time training visualization', 'Decision boundary plotting'],
-                github: 'https://github.com/Fayedolla/'
+                github: 'https://github.com/Fayedolla/',
+                image: 'Neural.png'
             },
             {
                 title: 'FastAPI Social Media App',
@@ -467,7 +526,8 @@
                 tech: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Alembic', 'OAuth2', 'JWT'],
                 gradient: 'from-blue-500 to-cyan-500',
                 features: ['JWT Authentication & Authorization', 'CRUD operations for posts', 'Voting system (upvote/downvote)'],
-                github: 'https://github.com/Fayedolla/'
+                github: 'https://github.com/Fayedolla/',
+                image: 'FastAPI (3).png'
             }
         ];
 
@@ -475,7 +535,7 @@
         const projectsContainer = document.getElementById('projects-container');
         projects.forEach((project, idx) => {
             const projectCard = document.createElement('div');
-            projectCard.className = 'group bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl p-8 border-2 border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/30 cursor-pointer backdrop-blur-sm opacity-0 scale-in';
+            projectCard.className = 'group bg-gradient-to-br from-gray-800/80 to-gray-900/80 rounded-2xl overflow-hidden border-2 border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/30 cursor-pointer backdrop-blur-sm opacity-0 scale-in';
             projectCard.style.animationDelay = `${idx * 0.2}s`;
             
             setTimeout(() => {
@@ -485,23 +545,79 @@
             const techTags = project.tech.map(tech => `<span class="px-3 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full text-sm text-gray-300 border border-cyan-500/30 hover:border-cyan-400 hover:scale-105 transition-all duration-300">${tech}</span>`).join('');
             const features = project.features.map(f => `<li class="flex items-start"><span class="text-cyan-400 mr-2">▸</span><span>${f}</span></li>`).join('');
             
+            // Image section with fallback
+            const imageSection = project.image ? `
+                <div class="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-gradient-to-br ${project.gradient} group-hover:scale-[1.02] transition-transform duration-500">
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 z-10"></div>
+                    <!-- Animated Border Lines -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.gradient} z-20"></div>
+                    <div class="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l ${project.gradient} z-20"></div>
+                    <!-- Image -->
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-0" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';">
+                    <!-- Fallback Icon -->
+                    <div class="fallback-icon absolute inset-0 bg-gradient-to-br ${project.gradient} hidden items-center justify-center z-30">
+                        <div class="text-center">
+                            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-white/80 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <p class="text-white/60 text-sm font-medium">Project Screenshot</p>
+                        </div>
+                    </div>
+                    <!-- Shine Effect -->
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                    </div>
+                    <!-- Corner Accents -->
+                    <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyan-400/50 z-20"></div>
+                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyan-400/50 z-20"></div>
+                    <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-purple-400/50 z-20"></div>
+                    <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-purple-400/50 z-20"></div>
+                </div>
+            ` : `
+                <div class="relative overflow-hidden h-48 sm:h-56 md:h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
+                    <!-- Animated Border Lines -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${project.gradient} opacity-50"></div>
+                    <div class="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l ${project.gradient} opacity-50"></div>
+                    <!-- Icon -->
+                    <div class="text-center z-10">
+                        <svg class="w-16 h-16 sm:w-20 sm:h-20 text-white/80 mx-auto mb-4 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <p class="text-white/60 text-sm font-medium">Project Screenshot</p>
+                    </div>
+                    <!-- Pattern Background -->
+                    <div class="absolute inset-0 opacity-5">
+                        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px);"></div>
+                    </div>
+                    <!-- Corner Accents -->
+                    <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-cyan-400/50"></div>
+                    <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-cyan-400/50"></div>
+                    <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-purple-400/50"></div>
+                    <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-purple-400/50"></div>
+                </div>
+            `;
+            
             projectCard.innerHTML = `
-                <div class="w-full h-2 bg-gradient-to-r ${project.gradient} rounded-full mb-6 group-hover:h-3 transition-all duration-300"></div>
-                <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
-                    ${project.title}
-                </h3>
-                <p class="text-gray-400 mb-4 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">${project.description}</p>
-                <ul class="text-sm text-gray-500 mb-6 space-y-1 group-hover:text-gray-400 transition-colors duration-300">${features}</ul>
-                <div class="flex flex-wrap gap-2 mb-6">${techTags}</div>
-                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group-hover:scale-105">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                    </svg>
-                    <span class="text-sm font-semibold">View on GitHub</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
+                ${imageSection}
+                <div class="p-6 sm:p-8">
+                    <div class="w-full h-2 bg-gradient-to-r ${project.gradient} rounded-full mb-4 sm:mb-6 group-hover:h-3 transition-all duration-300"></div>
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all duration-300">
+                        ${project.title}
+                    </h3>
+                    <p class="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">${project.description}</p>
+                    <ul class="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 space-y-1 group-hover:text-gray-400 transition-colors duration-300">${features}</ul>
+                    <div class="flex flex-wrap gap-2 mb-4 sm:mb-6">${techTags}</div>
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group-hover:scale-105 text-sm sm:text-base">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                        </svg>
+                        <span class="font-semibold">View on GitHub</span>
+                        <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
             `;
             
             projectsContainer.appendChild(projectCard);
